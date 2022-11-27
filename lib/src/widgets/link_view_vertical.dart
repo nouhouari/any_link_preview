@@ -9,6 +9,8 @@ class LinkViewVertical extends StatelessWidget {
   final TextStyle? titleTextStyle;
   final TextStyle? bodyTextStyle;
   final bool? showMultiMedia;
+  final bool? showTitle;
+  final bool? showBody;
   final TextOverflow? bodyTextOverflow;
   final int? bodyMaxLines;
   final double? radius;
@@ -24,6 +26,8 @@ class LinkViewVertical extends StatelessWidget {
     this.titleTextStyle,
     this.bodyTextStyle,
     this.showMultiMedia,
+    this.showTitle,
+    this.showBody,
     this.bodyTextOverflow,
     this.bodyMaxLines,
     this.bgColor,
@@ -71,7 +75,7 @@ class LinkViewVertical extends StatelessWidget {
             children: <Widget>[
               showMultiMedia!
                   ? Expanded(
-                      flex: 2,
+                      // flex: 2,
                       child: imageProvider == null
                           ? Container(color: bgColor ?? Colors.grey)
                           : Container(
@@ -91,9 +95,13 @@ class LinkViewVertical extends StatelessWidget {
                             ),
                     )
                   : SizedBox(height: 5),
-              _buildTitleContainer(
-                  titleTS_, computeTitleLines(layoutHeight, layoutWidth)),
-              _buildBodyContainer(bodyTS_, computeBodyLines(layoutHeight)),
+              // showTitle!
+              //     ? _buildTitleContainer(
+              //         titleTS_, computeTitleLines(layoutHeight, layoutWidth))
+              //     : Container(),
+              // showBody!
+              //     ? _buildBodyContainer(bodyTS_, computeBodyLines(layoutHeight))
+              //     : Container(),
             ],
           ));
     });

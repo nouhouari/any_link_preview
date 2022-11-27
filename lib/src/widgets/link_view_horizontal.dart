@@ -9,6 +9,8 @@ class LinkViewHorizontal extends StatelessWidget {
   final TextStyle? titleTextStyle;
   final TextStyle? bodyTextStyle;
   final bool? showMultiMedia;
+  final bool? showTitle;
+  final bool? showBody;
   final TextOverflow? bodyTextOverflow;
   final int? bodyMaxLines;
   final double? radius;
@@ -24,6 +26,8 @@ class LinkViewHorizontal extends StatelessWidget {
     this.titleTextStyle,
     this.bodyTextStyle,
     this.showMultiMedia,
+    this.showTitle,
+    this.showBody,
     this.bodyTextOverflow,
     this.bodyMaxLines,
     this.bgColor,
@@ -103,10 +107,14 @@ class LinkViewHorizontal extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      _buildTitleContainer(
-                          titleFontSize_, computeTitleLines(layoutHeight)),
-                      _buildBodyContainer(
-                          bodyFontSize_, computeBodyLines(layoutHeight))
+                      showTitle!
+                          ? _buildTitleContainer(
+                              titleFontSize_, computeTitleLines(layoutHeight))
+                          : Container(),
+                      showBody!
+                          ? _buildBodyContainer(
+                              bodyFontSize_, computeBodyLines(layoutHeight))
+                          : Container()
                     ],
                   ),
                 ),

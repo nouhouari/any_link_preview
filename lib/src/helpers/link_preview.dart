@@ -75,6 +75,12 @@ class AnyLinkPreview extends StatefulWidget {
   /// Show or Hide image if available defaults to `true`
   final bool showMultimedia;
 
+  /// Show or Hide title. default value is `true`
+  final bool showTitle;
+
+  /// Show or Hide body. defaults to `true`
+  final bool showBody;
+
   /// BorderRadius for the card. Deafults to `12`
   final double? borderRadius;
 
@@ -114,6 +120,8 @@ class AnyLinkPreview extends StatefulWidget {
     this.bodyStyle,
     this.displayDirection = UIDirection.uiDirectionVertical,
     this.showMultimedia = true,
+    this.showTitle = true,
+    this.showBody = true,
     this.backgroundColor = const Color.fromRGBO(235, 235, 235, 1),
     this.bodyMaxLines = 3,
     this.bodyTextOverflow = TextOverflow.ellipsis,
@@ -146,6 +154,8 @@ class AnyLinkPreview extends StatefulWidget {
         bodyStyle = null,
         displayDirection = UIDirection.uiDirectionVertical,
         showMultimedia = true,
+        showTitle = true,
+        showBody = true,
         backgroundColor = null,
         bodyMaxLines = 3,
         bodyTextOverflow = TextOverflow.ellipsis,
@@ -327,6 +337,8 @@ class AnyLinkPreviewState extends State<AnyLinkPreview> {
               bodyTextOverflow: widget.bodyTextOverflow,
               bodyMaxLines: widget.bodyMaxLines,
               showMultiMedia: widget.showMultimedia,
+              showTitle: widget.showTitle,
+              showBody: widget.showBody,
               bgColor: widget.backgroundColor,
               radius: widget.borderRadius ?? 12,
             )
@@ -342,6 +354,8 @@ class AnyLinkPreviewState extends State<AnyLinkPreview> {
               bodyTextOverflow: widget.bodyTextOverflow,
               bodyMaxLines: widget.bodyMaxLines,
               showMultiMedia: widget.showMultimedia,
+              showTitle: widget.showTitle,
+              showBody: widget.showBody,
               bgColor: widget.backgroundColor,
               radius: widget.borderRadius ?? 12,
             ),
